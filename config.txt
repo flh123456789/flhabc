@@ -5,7 +5,7 @@
 # 公众号appSecret
 "app_secret": "cfb4fe2a8893038fe46d440856388c9d",
 # 模板消息id
-"template_id": "hHzZJZkz18azdo1Jno9Cl8nlwRSVlHSGJGUZS4Jendw",
+"template_id": "f_UeOuqi4dz14j7MSfVNeWXodmnip4Plso8AYaHZ0e0",
 # 接收公众号消息的微信号，如果有多个，需要在[]里用英文逗号间隔，例如["wx1", "wx2"]
 "user": ["o2i3L51NSxa77pcrG0ofrsG_sVoM",""],
 
@@ -17,7 +17,7 @@
 # 所在地区，可为省，城市，区，县，同时支持国外城市，例如伦敦(国外城市可能获取不到pm2.5，空气质量，今日建议等数据)
 "region": "菏泽",
 # 生日
-"birthday1": {"name": "测试姓名", "birthday": "1997-09-28"},
+"birthday1": {"name": "测试姓名", "birthday": "2023-09-11"},
 # 在一起的日子，格式同上
 "love_date": "2023-3-06",
 # 金句中文，如果为空，默认会读取金山的每日金句
