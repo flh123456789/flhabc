@@ -225,11 +225,11 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "color": get_color()
             },
             "shujia_day": {
-                "value": shujia_days,
+                "value": abs(shujia_days),
                 "color": get_color()
             },
             "hanjia_day": {
-                "value": hanjia_days,
+                "value": abs(hanjia_days),
                 "color": get_color()
             },
             "note_en": {
