@@ -182,6 +182,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     shujia_date = date(shujia_year,shujia_month, shujia_day)
     # 获取暑假的日期差
     shujia_days = str(today.__sub__(shujia_date)).split(" ")[0]
+    shujia_days=abs(int(shujia_days))
     # 获取寒假的日期格式
     hanjia_year = int(config["hanjia_date"].split("-")[0])
     hanjia_month = int(config["hanjia_date"].split("-")[1])
@@ -189,6 +190,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     hanjia_date = date(hanjia_year, hanjia_month, hanjia_day)
     # 获取寒假的日期差
     hanjia_days = str(today.__sub__(hanjia_date)).split(" ")[0]
+    hanjia_days=abs(int(hanjia_days))
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
@@ -225,11 +227,11 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
                 "color": get_color()
             },
             "shujia_day": {
-                "value": int(abs(shujia_days)),
+                "value": shujia_days,
                 "color": get_color()
             },
             "hanjia_day": {
-                "value": int(abs(hanjia_days)),
+                "value": hanjia_days,
                 "color": get_color()
             },
             "note_en": {
