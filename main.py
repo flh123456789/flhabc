@@ -175,6 +175,20 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     love_date = date(love_year, love_month, love_day)
     # 获取在一起的日期差
     love_days = str(today.__sub__(love_date)).split(" ")[0]
+    # 获取在暑假的日期格式
+    shujia_year = int(config["shujia_date"].split("-")[0])
+    shujia_month = int(config["shujia_date"].split("-")[1])
+    shujia_day = int(config["shujia_date"].split("-")[2])
+    shujia_date = date(shujia_year,shujia_month, shujia_day)
+    # 获取暑假的日期差
+    shujia_days = str(today.__sub__(shujia_date)).split(" ")[0]
+    # 获取寒假的日期格式
+    hanjia_year = int(config["hanjia_date"].split("-")[0])
+    hanjia_month = int(config["hanjia_date"].split("-")[1])
+    hanjia_day = int(config["hanjia_date"].split("-")[2])
+    hanjia_date = date(hanjia_year, hanjia_month, hanjia_day)
+    # 获取寒假的日期差
+    hanjia_days = str(today.__sub__(hanjia_date)).split(" ")[0]
     # 获取所有生日数据
     birthdays = {}
     for k, v in config.items():
