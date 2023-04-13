@@ -37,7 +37,7 @@ def get_weather(region):
                       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
     }
     key = config["weather_key"]
-    region_url = "https://geoapi.qweather.com/v2/city/lookup?location={}&key={}".format(region, key)
+    region_url = "https://geoapi.qweather.com/v2/city/lookup?location=101121001&key=0071e6f033904f6789631f142296b2b6"
     response = get(region_url, headers=headers).json()
     if response["code"] == "404":
         print("推送消息失败，请检查地区名是否有误！")
@@ -50,7 +50,7 @@ def get_weather(region):
     else:
         # 获取地区的location--id
         location_id = response["location"][0]["id"]
-    weather_url = "https://devapi.qweather.com/v7/weather/now?location={}&key={}".format(location_id, key)
+    weather_url = "https://devapi.qweather.com/v7/weather/now?location=101121001&key=0071e6f033904f6789631f142296b2b6"
     response = get(weather_url, headers=headers).json()
     # 天气
     weather = response["now"]["text"]
@@ -59,7 +59,7 @@ def get_weather(region):
     # 风向
     wind_dir = response["now"]["windDir"]
     # 获取逐日天气预报
-    url = "https://devapi.qweather.com/v7/weather/3d?location={}&key={}".format(location_id, key)
+    url = "https://devapi.qweather.com/v7/weather/3d?location=101121001&key=0071e6f033904f6789631f142296b2b6"
     response = get(url, headers=headers).json()
     # 最高气温
     max_temp = response["daily"][0]["tempMax"] + u"\N{DEGREE SIGN}" + "C"
@@ -69,7 +69,7 @@ def get_weather(region):
     sunrise = response["daily"][0]["sunrise"]
     # 日落时间
     sunset = response["daily"][0]["sunset"]
-    url = "https://devapi.qweather.com/v7/air/now?location={}&key={}".format(location_id, key)
+    url = "https://devapi.qweather.com/v7/air/now?location=101121001&key=0071e6f033904f6789631f142296b2b6"
     response = get(url, headers=headers).json()
     if response["code"] == "200":
         # 空气质量
@@ -81,7 +81,7 @@ def get_weather(region):
         category = ""
         pm2p5 = ""
     id = random.randint(1, 16)
-    url = "https://devapi.qweather.com/v7/indices/1d?location={}&key={}&type={}".format(location_id, key, id)
+    url = "https://devapi.qweather.com/v7/indices/1d?location=101121001&key=0071e6f033904f6789631f142296b2b6&type={}".format(id)
     response = get(url, headers=headers).json()
     proposal = ""
     if response["code"] == "200":
