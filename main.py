@@ -178,7 +178,7 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     # 获取新生日的日期格式
     newbrith_year = int(config["newbrith_date"].split("-")[0])
     newbrith_month = int(config["newbrith_date"].split("-")[1])
-    newbrith_day = int(config["newbrithdate"].split("-")[2])
+    newbrith_day = int(config["newbrith_date"].split("-")[2])
     newbrith_date = date(newbrith_year,newbrith_month, newbrith_day)
     # 获取新生日的日期差
     newbrith_days = str(today.__sub__(newbrith_date)).split(" ")[0]
