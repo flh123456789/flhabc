@@ -175,6 +175,15 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
     love_date = date(love_year, love_month, love_day)
     # 获取在一起的日期差
     love_days = str(today.__sub__(love_date)).split(" ")[0]
+    # 获取新生日的日期格式
+    newbrith_year = int(config["newbrith_date"].split("-")[0])
+    newbrith_month = int(config["newbrith_date"].split("-")[1])
+    newbrith_day = int(config["newbrithdate"].split("-")[2])
+    newbrith_date = date(newbrith_year,newbrith_month, newbrith_day)
+    # 获取新生日的日期差
+    newbrith_days = str(today.__sub__(newbrith_date)).split(" ")[0]
+    newbrith_days=abs(int(newbrith_days))
+    
     # 获取在暑假的日期格式
     shujia_year = int(config["shujia_date"].split("-")[0])
     shujia_month = int(config["shujia_date"].split("-")[1])
@@ -232,6 +241,10 @@ def send_message(to_user, access_token, region_name, weather, temp, wind_dir, no
             },
             "hanjia_day": {
                 "value": hanjia_days,
+                "color": get_color()
+            },
+            "newbrith_day": {
+                "value": newbrith_days,
                 "color": get_color()
             },
             "note_en": {
